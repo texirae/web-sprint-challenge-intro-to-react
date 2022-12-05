@@ -1,16 +1,14 @@
 // Write your Character component here
 import React, {useEffect, useState} from "react";
-import axios from "axios";
+
 
 function Character(props){
-    const [character, setCharacter] = useState(props);
 
-    useEffect(()=> {
-        axios.get("https://swapi.dev/api/people/")
-            .then(res => {
-                setCharacter(res);
-            }).catch(err => console.error(err))
-    }, [])
+    return(
+        <div className="character-container">
+            <h2>{props.name}</h2>
+        </div>
+    )
 }
 
   export default Character;
